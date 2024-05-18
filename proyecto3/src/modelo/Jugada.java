@@ -8,6 +8,8 @@ public class Jugada {
         this.seleccionMaquina = seleccionMaquina;
     }
 
+    public Jugada() {} // constructor vacío para poder crear el objeto en el metodo del main.
+
     public String getSeleccionHumano() {
         return seleccionHumano;
     }
