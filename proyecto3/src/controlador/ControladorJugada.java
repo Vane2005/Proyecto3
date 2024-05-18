@@ -24,44 +24,7 @@ public class ControladorJugada implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         seleccionHumana = vistaJugada.getseleccionHumano();
         seleccionMaquina = vistaJugada.getseleccionMaquina();
-        String resultado = Determinar_Ganador(seleccionHumana, seleccionMaquina);
+        String resultado = "";
         vistaJugada.mostrarResultado(resultado);
-    }
-
-    public String Determinar_Ganador(String seleccionHumana, String seleccionMaquina){
-        if (seleccionHumana.equals(seleccionMaquina)){
-            return "EMPATE";
-        }
-        else {
-            switch (seleccionHumana) {
-                case "PIEDRA":
-                    if (seleccionMaquina.equals("TIJERA")) {
-                        return "GANADOR HUMANO";
-                    }
-                    else if (seleccionMaquina.equals("PAPEL")) {
-                        return "GANADOR MAQUINA";
-                    }
-                    break;
-
-                case "PAPEL":
-                    if (seleccionMaquina.equals("PIEDRA")) {
-                        return "GANADOR HUMANO";
-                    }
-                    else if (seleccionMaquina.equals("TIJERA")) {
-                        return "GANADOR MAQUINA";
-                    }
-                    break;
-
-                case "TIJERA":
-                    if (seleccionMaquina.equals("PAPEL")) {
-                        return "GANADOR HUMANO";
-                    }
-                    else if (seleccionMaquina.equals("PIEDRA")) {
-                        return "GANADOR MAQUINA";
-                    }
-                    break;
-            }
-            return "INTENTE NUEVAMENTE";
-        }
     }
 }
