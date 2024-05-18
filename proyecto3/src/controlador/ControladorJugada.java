@@ -8,6 +8,8 @@ import vista.VistaJugada;
 public class ControladorJugada implements ActionListener{
     Jugada jugada;
     VistaJugada vistaJugada;
+    String seleccionHumana;
+    String seleccionMaquina;
     
     public ControladorJugada(Jugada jugada, VistaJugada vistaJugada) {
         this.jugada = jugada;
@@ -20,8 +22,8 @@ public class ControladorJugada implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String seleccionHumana = vistaJugada.getseleccionHumano();
-        String seleccionMaquina = vistaJugada.getSeleccionMaquina();
+        seleccionHumana = vistaJugada.getseleccionHumano();
+        seleccionMaquina = vistaJugada.getseleccionMaquina();
         String resultado = "";
         vistaJugada.mostrarResultado(resultado);
     }
