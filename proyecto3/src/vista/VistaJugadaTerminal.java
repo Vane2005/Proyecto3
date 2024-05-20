@@ -19,7 +19,7 @@ public class VistaJugadaTerminal implements VistaJugada{
         opciones.add("TIJERA");
         System.out.println("Selecciona tu opcion para jugar: ");
         for(int i=0; i<3; i++){
-            System.out.println(i + opciones.get(i));
+            System.out.println((i+1) + ") " + opciones.get(i));
         }
         Scanner scanner = new Scanner(System.in);
         byte opcion;
