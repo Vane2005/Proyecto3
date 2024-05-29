@@ -66,9 +66,8 @@ public class VistaJugadaGui extends JFrame implements VistaJugada {
         setVisible(true);
     }
 
-    @Override
     public void mostrarResultado(String resultado) {
-        JOptionPane.showMessageDialog(contenedor,"El GANADOR ES: " + resultado);
+        JOptionPane.showMessageDialog(contenedor, resultado);
     }
 
     @Override
@@ -82,4 +81,5 @@ public class VistaJugadaGui extends JFrame implements VistaJugada {
         int obtenerIndiceAleatorio = random.nextInt(ListaOpciones.length); // se elige un indice aleatorio de la lista de las opciones
         return ListaOpciones[obtenerIndiceAleatorio]; // se obtiene el contenido del indice
     }
+
 }

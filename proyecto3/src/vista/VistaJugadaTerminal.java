@@ -9,8 +9,8 @@ import controlador.ControladorJugada;
 
 public class VistaJugadaTerminal implements VistaJugada{
 
-    String seleccionHumano, seleccionMaquina;
-
+    String seleccionHumano, seleccionMaquina, resultado;
+    
     @Override
     public void mostrarInterfaz(ControladorJugada controladorJugada) {
         System.out.println("BIENVENIDO/A AL JUEGO!!!");
@@ -18,7 +18,7 @@ public class VistaJugadaTerminal implements VistaJugada{
         opciones.add("PIEDRA");
         opciones.add("PAPEL");
         opciones.add("TIJERA");
-        opciones.add("SALIR");
+        opciones.add("MENU PRINCIPAL");
         
         byte opcion = 0;
         while (opcion != 4) {
@@ -47,6 +47,7 @@ public class VistaJugadaTerminal implements VistaJugada{
             switch (opcion) {
                 case 1:
                     if(opcionAleatoriaMaquina == 0){
+                        System.out.println("LA MAQUINA HA SACADO "+ (opciones.get(opcionAleatoriaMaquina)));
                         System.out.println("EMPATE!!");
                     }
                     else if(opcionAleatoriaMaquina == 1){
@@ -60,6 +61,7 @@ public class VistaJugadaTerminal implements VistaJugada{
                     break;
                 case 2:
                     if(opcionAleatoriaMaquina == 1){
+                        System.out.println("LA MAQUINA HA SACADO "+ (opciones.get(opcionAleatoriaMaquina)));
                         System.out.println("EMPATE!!");
                     }
                     else if(opcionAleatoriaMaquina == 0){
@@ -73,6 +75,7 @@ public class VistaJugadaTerminal implements VistaJugada{
                     break;
                 case 3:
                     if(opcionAleatoriaMaquina == 2){
+                        System.out.println("LA MAQUINA HA SACADO "+ (opciones.get(opcionAleatoriaMaquina)));
                         System.out.println("EMPATE!!");
                     }
                     else if(opcionAleatoriaMaquina == 0){
@@ -89,11 +92,6 @@ public class VistaJugadaTerminal implements VistaJugada{
     }
 
     @Override
-    public void mostrarResultado(String resultado) {
-        System.out.println("EL GANADOR ES: " + resultado);
-    }
-
-    @Override
     public String getseleccionHumano() {
         return seleccionHumano;
     }
@@ -102,5 +100,10 @@ public class VistaJugadaTerminal implements VistaJugada{
     public String getseleccionMaquina() {
         return seleccionMaquina;
     }
-    
+
+    @Override
+    public void mostrarResultado(String resultado) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'mostrarResultado'");
+    }
 }
