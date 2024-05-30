@@ -1,5 +1,6 @@
 import controlador.ControladorJugada;
 import modelo.Jugada;
+import vista.ModoNoValidoException;
 import vista.VistaJugadaGui;
 import vista.VistaJugadaTerminal;
 
@@ -34,11 +35,13 @@ public class App {
                         controladorJugada.mostrarInterfaz();
                     }
                 } else {
-                    System.out.println("Modo no valido.");
+                    throw new ModoNoValidoException("Modo no valido.");
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Debes ingresar un numero valido.");
                 scanner.nextLine(); 
+            } catch (ModoNoValidoException e) {
+                System.out.println(e.getMessage());
             }
         }
     }
