@@ -11,6 +11,7 @@ public class ControladorJugada implements ActionListener{
     String seleccionHumana;
     String seleccionMaquina;
     
+    
     public ControladorJugada(Jugada jugada, VistaJugada vistaJugada) {
         this.jugada = jugada;
         this.vistaJugada = vistaJugada;
@@ -20,11 +21,23 @@ public class ControladorJugada implements ActionListener{
         vistaJugada.mostrarInterfaz(this);
     }
 
-    @Override
     public void actionPerformed(ActionEvent e) {
         seleccionHumana = vistaJugada.getseleccionHumano();
         seleccionMaquina = vistaJugada.getseleccionMaquina();
-        String resultado = "";
-        vistaJugada.mostrarResultado(resultado);
+        String resultado = determinarGanador(seleccionHumana, seleccionMaquina);
+        vistaJugada.mostrarResultado("Eleccion de la maquina: " + seleccionMaquina + "\n" +
+                                     "Resultado: " + resultado);
+    }
+
+    private String determinarGanador(String humano, String maquina) {
+        if (humano.equals(maquina)) {
+            return "EMPATE!!";
+        } else if ((humano.equals("PIEDRA") && maquina.equals("TIJERA")) ||
+                   (humano.equals("PAPEL") && maquina.equals("PIEDRA")) ||
+                   (humano.equals("TIJERA") && maquina.equals("PAPEL"))) {
+            return "HAZ GANADO!!!";
+        } else {
+            return "TE HAN GANADO!!";
+        }
     }
 }
