@@ -11,7 +11,7 @@
 
 ## Funcionalidades
 - **Grafica**:
-  -Genera una gráfica en la cual hay una lista donde el usuario puede elegir piedra, papel o tijera, una vez hecha su elección puede darle a elegir para que el programa le brinde el resultado.
+  - Genera una gráfica en la cual hay una lista donde el usuario puede elegir piedra, papel o tijera, una vez hecha su elección puede darle a elegir para que el programa le brinde el resultado.
     
 - **Consola**:
   - Genera un menú en consola, para que el usuario elija piedra, papel o tijera, una vez hecha su elección, brindara el resultado.
